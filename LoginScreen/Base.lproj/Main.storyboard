@@ -18,10 +18,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJf-Nr-rpB">
                                 <rect key="frame" x="147.5" y="320" width="119.5" height="57.5"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log In">
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="7bs-P6-AVK" kind="presentation" id="8Fb-fG-zXM"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="g5h-ZV-aP7">
                                 <rect key="frame" x="42" y="419" width="330" height="30.5"/>
@@ -77,10 +81,50 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oeN-1j-YnY">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="7bs-P6-AVK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="io3-q4-vPI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9T-tQ-Ysj">
+                                <rect key="frame" x="164" y="430" width="86" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzU-5x-wbw">
+                                <rect key="frame" x="50" y="104" width="314" height="22"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cp5-o4-TPI"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="WzU-5x-wbw" firstAttribute="top" secondItem="cp5-o4-TPI" secondAttribute="top" constant="60" id="Aju-yW-ijN"/>
+                            <constraint firstItem="WzU-5x-wbw" firstAttribute="leading" secondItem="cp5-o4-TPI" secondAttribute="leading" constant="50" id="DH6-zW-fJs"/>
+                            <constraint firstItem="J9T-tQ-Ysj" firstAttribute="centerY" secondItem="io3-q4-vPI" secondAttribute="centerY" id="Lys-l9-MR8"/>
+                            <constraint firstItem="J9T-tQ-Ysj" firstAttribute="centerX" secondItem="io3-q4-vPI" secondAttribute="centerX" id="PJV-aA-MWY"/>
+                            <constraint firstItem="cp5-o4-TPI" firstAttribute="trailing" secondItem="WzU-5x-wbw" secondAttribute="trailing" constant="50" id="r6r-Wc-Fvy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tlh-7S-Wct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702.89855072463774" y="91.741071428571431"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
