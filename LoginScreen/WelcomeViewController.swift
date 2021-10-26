@@ -11,8 +11,11 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet var greetingsText: UILabel!
     
+    var userName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        greetingsText.text = "Hello there" + " " + userName
 
     }
     
