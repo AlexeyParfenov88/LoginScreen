@@ -7,7 +7,7 @@
 
 import UIKit
 
-let login = "General Kenoby"
+let login = "123"
 let password = "456"
 
 
@@ -16,11 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func forgetUserNameButtonPresser(_ sender: Any) {
+            showAlert(title: "OOPS", message: "Your name is \(login)")
+    }
+    
+    
+    @IBAction func forgetPasswordButtonPressed(_ sender: Any) {
+        showAlert(title: "OOPS", message: "Your password is \(password)")
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -33,6 +39,13 @@ class ViewController: UIViewController {
         else {return}
         welcomeVC.userName = loginTextField.text
     }
-
 }
 
+extension ViewController {
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
