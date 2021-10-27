@@ -7,8 +7,8 @@
 
 import UIKit
 
-let login = "123"
-let password = "456"
+let login = "User"
+let password = "Password"
 
 
 class ViewController: UIViewController {
