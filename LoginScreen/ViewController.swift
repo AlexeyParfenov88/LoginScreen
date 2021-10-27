@@ -40,8 +40,10 @@ class ViewController: UIViewController {
         welcomeVC.userName = loginTextField.text
     }
     
-    @IBAction func unwind(segue: UIStoryboardSegue) {}
-    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        loginTextField.text = ""
+        passwordTextField.text = ""
+    }
 }
 
 extension ViewController {
