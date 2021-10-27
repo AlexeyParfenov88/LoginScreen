@@ -39,6 +39,9 @@ class ViewController: UIViewController {
         else {return}
         welcomeVC.userName = loginTextField.text
     }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {}
+    
 }
 
 extension ViewController {

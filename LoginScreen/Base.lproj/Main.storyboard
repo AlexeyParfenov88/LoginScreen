@@ -106,7 +106,7 @@
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logOutButtonPressed" destination="7bs-P6-AVK" eventType="touchUpInside" id="RTG-Tg-1DL"/>
+                                    <segue destination="zf2-Uu-w9d" kind="unwind" unwindAction="unwindWithSegue:" id="KmV-PV-j9j"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzU-5x-wbw">
@@ -131,6 +131,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlh-7S-Wct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zf2-Uu-w9d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="702.89855072463774" y="91.741071428571431"/>
         </scene>
