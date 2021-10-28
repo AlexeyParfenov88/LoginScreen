@@ -24,6 +24,7 @@
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wsy-Bt-dp6"/>
                                     <segue destination="7bs-P6-AVK" kind="presentation" id="8Fb-fG-zXM"/>
                                 </connections>
                             </button>

@@ -7,21 +7,18 @@
 
 import UIKit
 
-let login = "User"
-let password = "Password"
 
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let userName = "User"
+    private let password = "Password"
     
     @IBAction func forgetUserNameButtonPresser(_ sender: Any) {
-            showAlert(title: "OOPS", message: "Your name is \(login)")
+        showAlert(title: "OOPS", message: "Your name is \(userName)")
     }
     
     
@@ -30,14 +27,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        let userName = loginTextField.text ?? ""
-        loginTextField.text = userName
+        if loginTextField.text != userName || passwordTextField.text != password {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password",
+                textField: passwordTextField
+            )
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController
         else {return}
-        welcomeVC.userName = loginTextField.text
+        welcomeVC.userName = userName
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
@@ -47,9 +49,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
