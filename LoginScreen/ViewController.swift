@@ -58,3 +58,11 @@ extension ViewController {
         present(alert, animated: true)
     }
 }
+
+extension ViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+}
