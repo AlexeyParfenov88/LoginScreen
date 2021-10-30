@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         showAlert(title: "OOPS", message: "Your password is \(password)")
     }
     
-    @IBAction func loginButtonPressed() {
+    @IBAction func loginButtonPressed(_ sender: Any) {
         if loginTextField.text != userName || passwordTextField.text != password {
             showAlert(
                 title: "Invalid login or password",
@@ -58,20 +58,20 @@ extension ViewController {
         present(alert, animated: true)
     }
 }
-
-extension ViewController: UITextFieldDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == loginTextField {
-            passwordTextField.becomeFirstResponder()
-        } else {
-            loginButtonPressed()
-            performSegue(withIdentifier: "showWelcomeVc", sender: nil)
-        }
-        return true
-    }
-}
+//
+//extension ViewController: UITextFieldDelegate {
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesBegan(touches, with: event)
+//        view.endEditing(true)
+//    }
+//
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        if textField == loginTextField {
+//            passwordTextField.becomeFirstResponder()
+//        } else {
+//            loginButtonPressed()
+//            performSegue(withIdentifier: "showWelcomeVc", sender: nil)
+//        }
+//        return true
+//    }
+//}
