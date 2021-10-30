@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     private let user = User()
     
     @IBAction func forgetUserNameButtonPresser(_ sender: Any) {
-        showAlert(title: "OOPS", message: "Your name is \(user.userName)")
+        showAlert(title: "OOPS", message: "Your name is \(user.username)")
     }
     
     
@@ -27,16 +27,16 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let mainTabBarController = segue.destination as? MainTabBarViewController {
-            mainTabBarController.name = user.personalInfo.name
-            mainTabBarController.surname = user.personalInfo.surname
-            mainTabBarController.phoneNumber = user.personalInfo.phoneNumber
-            mainTabBarController.bio = user.personalInfo.shortBio
-        }
+        guard let mainTabBarViewController = segue.destination as? MainTabBarViewController else { return }
+        mainTabBarViewController.name = user.personalInfo.name
+        mainTabBarViewController.surname = user.personalInfo.surname
+        mainTabBarViewController.phoneNumber = user.personalInfo.phoneNumber
+        mainTabBarViewController.bio = user.personalInfo.shortBio
+        
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        if loginTextField.text != user.userName || passwordTextField.text != user.password {
+        if loginTextField.text != user.username || passwordTextField.text != user.password {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",

@@ -145,28 +145,72 @@
             </objects>
             <point key="canvasLocation" x="1687" y="-291"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Info-->
         <scene sceneID="hId-Cg-VjU">
             <objects>
                 <viewController id="D0T-iQ-N5I" customClass="InfoViewController" customModule="LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xV-J6-cob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Phc-fe-Pe4">
+                                <rect key="frame" x="20" y="318.5" width="374" height="259"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qr-lD-mgn">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woi-D3-PYV">
+                                        <rect key="frame" x="0.0" y="78.5" width="374" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPA-R7-qgx">
+                                        <rect key="frame" x="0.0" y="157" width="374" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81L-aE-zFa">
+                                        <rect key="frame" x="0.0" y="235.5" width="374" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uPF-2O-ysw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Phc-fe-Pe4" firstAttribute="centerY" secondItem="3xV-J6-cob" secondAttribute="centerY" id="7zC-8f-Wfj"/>
+                            <constraint firstItem="Phc-fe-Pe4" firstAttribute="centerX" secondItem="3xV-J6-cob" secondAttribute="centerX" id="E3i-iJ-xg9"/>
+                            <constraint firstItem="Phc-fe-Pe4" firstAttribute="leading" secondItem="uPF-2O-ysw" secondAttribute="leading" constant="20" id="ewC-4c-Efg"/>
+                            <constraint firstItem="uPF-2O-ysw" firstAttribute="trailing" secondItem="Phc-fe-Pe4" secondAttribute="trailing" constant="20" id="gqh-AD-b2T"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ncn-S4-a0M"/>
+                    <navigationItem key="navigationItem" title="Info" id="ncn-S4-a0M"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="81L-aE-zFa" id="Sby-hk-FYt"/>
+                        <outlet property="nameLabel" destination="2Qr-lD-mgn" id="SMv-Fd-iCq"/>
+                        <outlet property="phoneNumberLabel" destination="QPA-R7-qgx" id="R5n-CG-Wku"/>
+                        <outlet property="surnameLabel" destination="woi-D3-PYV" id="Dso-va-L9z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPF-mV-LOc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2599" y="376"/>
         </scene>
-        <!--Main Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="OVY-aa-kqi">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="nEl-F8-hfc" customClass="MainTabBarController" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="nEl-F8-hfc" customClass="MainTabBarViewController" customModule="LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lrv-E0-y7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -185,8 +229,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iVV-EI-Xwg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="info" catalog="system" id="xQr-SM-Ufh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GgL-NA-KXo">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="GgL-NA-KXo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

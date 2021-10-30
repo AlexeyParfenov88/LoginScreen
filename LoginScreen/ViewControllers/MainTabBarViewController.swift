@@ -18,13 +18,13 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         guard let viewControllers = viewControllers else { return }
-//        guard let viewcontrollers = viewControllers else {return}
         
         for viewController in viewControllers {
             if let welcomeViewController = viewController as? WelcomeViewController {
                 welcomeViewController.name = name
                 welcomeViewController.surname = surname
-            } else if let infoNavigationController = viewController
+            }
+            else if let infoNavigationController = viewController
                         as? UINavigationController {
                 let infoViewController = infoNavigationController.topViewController
                     as! InfoViewController
@@ -34,7 +34,5 @@ class MainTabBarViewController: UITabBarController {
                 infoViewController.bio = bio
             }
         }
-        
     }
-   
 }
