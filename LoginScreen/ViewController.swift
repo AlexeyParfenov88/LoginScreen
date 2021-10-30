@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         showAlert(title: "OOPS", message: "Your password is \(password)")
     }
     
-    @IBAction func loginButtonPressed(_ sender: Any) {
+    @IBAction func loginButtonPressed() {
         if loginTextField.text != userName || passwordTextField.text != password {
             showAlert(
                 title: "Invalid login or password",
@@ -65,4 +65,13 @@ extension ViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            loginButtonPressed()
+            performSegue(withIdentifier: "showWelcomeVc", sender: nil)
+        }
+        return true
+    }
 }
