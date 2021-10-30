@@ -6,8 +6,8 @@
 //
 
 struct User {
-    let username = "1"
-    let password = "2"
+    let username = "User"
+    let password = "Password"
     let personalInfo = Person()
 }
 

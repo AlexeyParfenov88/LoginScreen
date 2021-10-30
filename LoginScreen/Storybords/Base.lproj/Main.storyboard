@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -100,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="oeN-1j-YnY">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="7bs-P6-AVK" customClass="WelcomeViewController" customModule="LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +136,9 @@
                             <constraint firstItem="cp5-o4-TPI" firstAttribute="trailing" secondItem="WzU-5x-wbw" secondAttribute="trailing" constant="50" id="r6r-Wc-Fvy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="person.fill" catalog="system" id="LpO-pi-zLQ"/>
+                    <tabBarItem key="tabBarItem" title="User" id="LpO-pi-zLQ">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="greetingsText" destination="WzU-5x-wbw" id="21i-uT-Wcy"/>
                     </connections>
@@ -293,6 +296,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPurpleColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="7bs-P6-AVK" kind="relationship" relationship="viewControllers" id="boW-QY-loy"/>
@@ -303,11 +307,13 @@
             </objects>
             <point key="canvasLocation" x="719" y="84"/>
         </scene>
-        <!--Item-->
+        <!--Info-->
         <scene sceneID="OtR-In-nJP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iVV-EI-Xwg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="info" catalog="system" id="xQr-SM-Ufh"/>
+                    <tabBarItem key="tabBarItem" title="Info" id="xQr-SM-Ufh">
+                        <imageReference key="image" image="info" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="GgL-NA-KXo">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
