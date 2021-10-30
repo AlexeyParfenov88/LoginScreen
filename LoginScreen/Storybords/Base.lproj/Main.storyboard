@@ -24,8 +24,8 @@
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wsy-Bt-dp6"/>
-                                    <segue destination="nEl-F8-hfc" kind="presentation" id="VaQ-kI-ZEm"/>
+                                    <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="yqK-5d-IMx"/>
+                                    <segue destination="nEl-F8-hfc" kind="presentation" identifier="showWelcomeVC" id="VaQ-kI-ZEm"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="g5h-ZV-aP7">
