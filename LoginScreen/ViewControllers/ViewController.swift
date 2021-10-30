@@ -14,20 +14,29 @@ class ViewController: UIViewController {
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let userName = "User"
-    private let password = "Password"
+    private let user = User()
     
     @IBAction func forgetUserNameButtonPresser(_ sender: Any) {
-        showAlert(title: "OOPS", message: "Your name is \(userName)")
+        showAlert(title: "OOPS", message: "Your name is \(user.userName)")
     }
     
     
     @IBAction func forgetPasswordButtonPressed(_ sender: Any) {
-        showAlert(title: "OOPS", message: "Your password is \(password)")
+        showAlert(title: "OOPS", message: "Your password is \(user.password)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let mainTabBarController = segue.destination as? MainTabBarViewController {
+            mainTabBarController.name = user.personalInfo.name
+            mainTabBarController.surname = user.personalInfo.surname
+            mainTabBarController.phoneNumber = user.personalInfo.phoneNumber
+            mainTabBarController.bio = user.personalInfo.shortBio
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        if loginTextField.text != userName || passwordTextField.text != password {
+        if loginTextField.text != user.userName || passwordTextField.text != user.password {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
@@ -36,11 +45,6 @@ class ViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController
-        else {return}
-        welcomeVC.userName = userName
-    }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
         loginTextField.text = ""
@@ -58,7 +62,7 @@ extension ViewController {
         present(alert, animated: true)
     }
 }
-//
+
 //extension ViewController: UITextFieldDelegate {
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        super.touchesBegan(touches, with: event)
