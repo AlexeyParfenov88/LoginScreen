@@ -14,20 +14,15 @@ class InfoViewController: UIViewController {
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var bioLabel: UILabel!
     
-    
-    
-    var name: String?
-    var surname: String?
-    var phoneNumber: String?
-    var bio: String?
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLabel.text = name
-        surnameLabel.text = surname
-        phoneNumberLabel.text = phoneNumber
-        bioLabel.text = bio
+        nameLabel.text = user.person.name
+        surnameLabel.text = user.person.surname
+        phoneNumberLabel.text = user.person.phoneNumber
+        bioLabel.text = user.person.shortBio
 
     }
  

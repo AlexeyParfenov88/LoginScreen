@@ -11,12 +11,12 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet var greetingsText: UILabel!
     
-    var name: String?
-    var surname: String?
+    var user: User!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingsText.text = "Welcome, \(name ?? "Unresolved") \(surname ?? "Unresolved")!"
+        greetingsText.text = "Welcome, \(user.person.fullName)!"
 
     }
 }

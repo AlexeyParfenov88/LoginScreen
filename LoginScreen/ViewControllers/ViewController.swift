@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let user = User()
+    private let user = User.getUserData()
     
     @IBAction func forgetUserNameButtonPresser(_ sender: Any) {
         showAlert(title: "OOPS", message: "Your name is \(user.username)")
@@ -27,12 +27,26 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let mainTabBarViewController = segue.destination as? MainTabBarViewController else { return }
-        mainTabBarViewController.name = user.personalInfo.name
-        mainTabBarViewController.surname = user.personalInfo.surname
-        mainTabBarViewController.phoneNumber = user.personalInfo.phoneNumber
-        mainTabBarViewController.bio = user.personalInfo.shortBio
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
         
+        viewControllers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController {
+                let userInfoVC = navigationVC.topViewController as! InfoViewController
+                userInfoVC.user = user
+            }
+        }
+        
+        viewControllers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController {
+                let userInfoVC = navigationVC.topViewController as! InfoViewController
+                userInfoVC.user = user
+            }
+        }
     }
     
     
