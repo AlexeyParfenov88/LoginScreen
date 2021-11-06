@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         passwordTextField.text = ""
     }
 }
-
+//Настройка алертов
 extension ViewController {
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -78,12 +78,14 @@ extension ViewController {
     }
 }
 
+
+// скрывает клавиатуру по тапу по экрану
 extension ViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-
+//закрытие клавиатуры по нажатию done, next и тд
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == loginTextField {
             passwordTextField.becomeFirstResponder()
